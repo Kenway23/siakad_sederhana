@@ -1,0 +1,60 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package login;
+
+import java.util.Scanner;
+import siakad_sederhana.Siakad_sederhana;
+
+/**  
+ *
+ * @author acer
+ */
+public class login_mahasiswa {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        String[] username = {"23552011678","23552011505","23552011737"};
+        String[] password = {"2323","5050","2525"};
+        
+        Scanner scanner = new Scanner(System.in);
+        boolean isLoggedIn = false;
+        //Input  
+        while (!isLoggedIn){
+        System.out.println("+==============================================+");
+        System.out.println("|                   LOGIN                      |");
+        System.out.println("|                                              |");
+        System.out.println("|                                              |");
+        Scanner input = new Scanner (System.in);
+        System.out.print("| Masukan Username: ");
+        String inputUsername = input.nextLine();
+        System.out.print("| Masuka Password: ");
+        String inputPassword = input.nextLine();
+        System.out.println("|                                              |");
+        System.out.println("|                                              |");
+        System.out.println("|                                              |");
+        System.out.println("+==============================================+");
+        
+        //cek input
+        boolean isLoginSuccessful = false;
+        for (int i = 0; i < username.length; i++){
+            if (inputUsername.equals(username[i]) && inputPassword.equals(password[i])) {
+                isLoginSuccessful = true;
+                break;
+            }
+        }
+        
+        if (isLoginSuccessful){
+            new Siakad_sederhana().showMenu();
+        }else{
+            System.out.println("Login Gagal Periksa Username Dan Password");         
+        }
+    }
+    }
+    
+}
